@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 lnx
+  button#logout Log Out
+  each val, index in JSON.parse(array)
+    #thread  
+      a(href = index)
+        h1= "Thread:" + index
+        each value, index2 in val
+          p= value.name
+  script(src="/javascripts/main.js")
