@@ -2,7 +2,7 @@ $("a").click(function (event){
 	event.preventDefault();
     $('#index').hide();
     $('#fullthread').show();
-    $.post( "/test", {ID:$(this).attr("href")}, function ( data ) {
+    $.post( "/fullThread", {ID:$(this).attr("href")}, function ( data ) {
 			for(var message in data){
 				if(data[message].body && (data[message].body).indexOf("http") >= 0){
 					if(data[message].senderName == "Conor Igoe"){
