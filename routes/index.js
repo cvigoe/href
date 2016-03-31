@@ -38,7 +38,7 @@ function getIndexPage(req, res, next){
 
 function loginCallback(err, api){
 	if(err) {
-		response.render("login", {wrongCreds: true});
+		response.send(false);
 		return console.error(err);
 	}
 	console.log("Logged in with facebook-chat-api, attempting to get Thread List...".blue);
@@ -47,7 +47,10 @@ function loginCallback(err, api){
 };
 
 function getThreadListCallback(err, array){
-	if(err) return console.error(err);
+	if(err) {
+		response.send(false);
+		return console.error(err);
+	}
 	console.log("Got Thread List:".blue);
 	for(var i in array){
 		ID = array[i].threadID;
@@ -72,6 +75,10 @@ function convert(){
 }
 
 function getUserInfoCallback (error, object){
+	if(error) {
+		response.send(false);
+		return console.error(err);
+	}
 	// console.log(object);
 	for(var l in threadsObject){
 		for(var m in threadsObject[l]){
