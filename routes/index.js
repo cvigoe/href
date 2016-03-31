@@ -33,7 +33,7 @@ function getLoginPage (req, res, next){
 function getIndexPage(req, res, next){
 	console.log("Got Index Page, attempting to log in using facebook-chat-api...".blue);
 	response = res;
-	login({email: req.body.email, password: req.body.password}, loginCallback);
+	login({email: req.body.email, password: req.body.password}, {forceLogin: true}, loginCallback);
 };
 
 function loginCallback(err, api){
