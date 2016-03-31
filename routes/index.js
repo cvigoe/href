@@ -77,7 +77,7 @@ function convert(){
 function getUserInfoCallback (error, object){
 	if(error) {
 		response.send(false);
-		return console.error(err);
+		return console.error(error);
 	}
 	// console.log(object);
 	for(var l in threadsObject){
