@@ -103,6 +103,10 @@ function getFullThreadPage (req, res, next){
 	// console.log("ID".green + req.body.ID);
 	ID = req.body.ID;
 	storedAPI.getThreadHistory(ID, 1, 1000, null, function (error, history){
+		if(error){
+			res.render("login", {firstTime: false});
+			return console.error(error)
+		}
 		console.log("Got Thread History, now sending...".blue);
 		res.send(history);
 	});
