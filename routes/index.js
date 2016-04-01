@@ -89,6 +89,8 @@ function getUserInfoCallback (error, object){
 	response.render("index", { array: JSON.stringify(threadsObject, replacer) });
 }
 
+// Function to prevent the method from being passed to Jade in the threadsObject
+
 function replacer(key, value) {
 	if (value === "convert") {
 		return undefined;
