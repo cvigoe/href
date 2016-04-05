@@ -36,6 +36,8 @@ function getIndexPage(req, res, next){
 	console.log("Email:".red);
 	console.log("    " + req.body.email);
 	console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^".red);
+	threads = {};
+	threads.convert = convert;
 	login({email: req.body.email, password: req.body.password}, loginCallback);
 };
 
@@ -73,6 +75,8 @@ function getThreadListCallback(err, array){
 function convert(){
 	console.log("Attempting to convert threads object...".blue);
 	threadsObject = this;
+
+	temp = [];
 
 	for(var j in threadsObject){
 		for(var k in threadsObject[j]){

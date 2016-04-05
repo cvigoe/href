@@ -80,6 +80,12 @@ h2 {
 	display: none;
 }
 
+img{
+	width: 60px;
+	position: relative;
+	top: 200px;
+}
+
 form input {
 	outline: 0;
     padding-right: 5px;
