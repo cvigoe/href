@@ -20,7 +20,7 @@ $(document).ready(function(){
     $.post("/index", {email: email, password: password}, function( data ) {
       $("#plead").hide();
       if (data === "1"){
-        $("#flash").html("<h3>Please approve login attempt from www.facebook.com</h3>");
+        $("#flash").html("<h3>Please approve login attempt from <a href='http://www.facebook.com'>www.facebook.com</a></h3>");
         $("#loading").hide();
         $("#login").show();
         $("#login_btn").show();
