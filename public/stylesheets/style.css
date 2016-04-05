@@ -20,10 +20,22 @@ div#me {
 	color: navy;
 	text-align: right;
 	background: aliceblue;
+	display: inline-block;
+	width: 50%;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 1px;
 }
 
 div#you {
 	color: blue;
+	text-align: left;
+	background: #6EBBFF;
+	display: inline-block;
+	width: 50%;
+	border-radius: 15px;
+	padding: 5px;
+	margin: 1px;
 }
 
 #login{
