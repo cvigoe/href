@@ -33,13 +33,22 @@ function getLoginPage (req, res, next){
 function getIndexPage(req, res, next){
 	console.log("Got Index Page, attempting to log in using facebook-chat-api...".blue);
 	response = res;
-	login({email: req.body.email, password: req.body.password}, {forceLogin: true}, loginCallback);
+	console.log("Email:".red);
+	console.log("    " + req.body.email);
+	console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^".red);
+	login({email: req.body.email, password: req.body.password}, loginCallback);
 };
 
 function loginCallback(err, api){
 	if(err) {
-		response.send(false);
-		return console.error(err);
+		if(err.error == "Error retrieving userID. This can be caused by a lot of things, including getting blocked by Facebook for logging in from an unknown location. Try logging in with a browser to verify." || err.error == "Couldn't login. Facebook might have blocked this account. Please login with a browser or enable the option 'forceLogin' and try again."){
+			response.send("1");
+			return console.error(err);
+		}
+		else{
+			response.send("2");
+			return console.error(err);
+		}
 	}
 	console.log("Logged in with facebook-chat-api, attempting to get Thread List...".blue);
 	storedAPI = api;

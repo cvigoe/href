@@ -16,15 +16,21 @@ $(document).ready(function(){
     var password = $("input[name='password']").val();
     $('#login').hide();
     $("#login_btn").hide();
-    $("body").append("<h1 id='plead'>Bear with me for about 20 seconds...<h1>");
+    $("#loading").show();
     $.post("/index", {email: email, password: password}, function( data ) {
       $("#plead").hide();
-      if (data === false){
-        $("#flash").html("<h3>Please check your username and password</h3>");
+      if (data === "1"){
+        $("#flash").html("<h3>Please approve login attempt from www.facebook.com</h3>");
+        $("#loading").hide();
         $("#login").show();
         $("#login_btn").show();
-      }
-      else {
+      } else if (data === "2"){
+        $("#flash").html("<h3>Please check your username and password</h3>");
+        $("#loading").hide();
+        $("#login").show();
+        $("#login_btn").show();
+      } else {
+        $("#loading").hide();
         $("#index").append(data);
       }
     });
