@@ -5,12 +5,14 @@ block content
     #flash
     if firstTime === false
       h3 Logged Out
-    h1 lnx
+    h1 href
     h2 Log in with your facebook account
     form(name="login" id="login_form")
       input(type="text", name="email", placeholder="Email")
       input(type="password", name="password", placeholder="Password")
-      input(type="submit", value="Log In")
+      input(type="submit", value="Log In" id="button")
+  #login_btn
+    h2 Log in
   #index
   #fullthread
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")

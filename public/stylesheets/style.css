@@ -1,6 +1,15 @@
+html {
+  height: 100%;
+}
+
 body {
+  background: linear-gradient(#274A75, #192F4A);
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+  max-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
@@ -15,4 +24,54 @@ div#me {
 
 div#you {
 	color: blue;
+}
+
+#login{
+	background: #fff;
+	margin: auto;
+	width: 400px;
+	padding: 20px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+h1 {
+	font-family: 'Patua One', cursive;
+	text-decoration: underline;
+	font-size: 2.3em;
+}
+
+h2 {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.4em;
+}
+
+#login_btn {
+	cursor:pointer;
+	background: #53ABEA;
+	margin: auto;
+	width: 400px;
+	padding: 20px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	height: 10px;
+	display: inline-table;
+}
+
+#login_btn h2 {
+	display: inline;
+	color: white;
+}
+
+#button {
+	visibility: hidden;
+	display: none;
+}
+
+form input {
+	border: none;
+	outline:0;
+	padding-right: 5px;
+	height: 30px;
+	wid
 }
