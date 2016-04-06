@@ -14,6 +14,7 @@ var storedAPI;
 var threadsObject;
 var temp = [];
 var response;
+var current_user_ID;
 
 // Routing
 
@@ -52,6 +53,9 @@ function loginCallback(err, api){
 			return console.error(err);
 		}
 	}
+
+	current_user_ID = api.getCurrentUserID();
+
 	console.log("Logged in with facebook-chat-api, attempting to get Thread List...".blue);
 	storedAPI = api;
 	api.getThreadList(1, 50, getThreadListCallback);
@@ -83,7 +87,6 @@ function convert(){
 			temp.push(threadsObject[j][k]);
 		}
 	}
-
 	storedAPI.getUserInfo(temp, getUserInfoCallback);
 }
 
@@ -95,7 +98,11 @@ function getUserInfoCallback (error, object){
 	// console.log(object);
 	for(var l in threadsObject){
 		for(var m in threadsObject[l]){
-			threadsObject[l][m] = object[threadsObject[l][m]];
+			if(threadsObject[l][m] === current_user_ID){
+				threadsObject[l][m] = "me";
+			} else{
+				threadsObject[l][m] = object[threadsObject[l][m]];
+			}
 		}
 	}
 	console.log("SENDING RESPONSE".green);

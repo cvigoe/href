@@ -24,7 +24,13 @@ $("a").click(function (event){
 	});
 });
 
-$("#logout").click(function (event ){
+$("#logout").hover(function (event){
+	$("#logout").attr("src", "../images/logouth.png");
+}, function (event){
+	$("#logout").attr("src", "../images/logout.png");
+});
+
+$("#logout").click(function (event){
 	event.preventDefault();
 	$("body").empty();
 	$.get("/logout", function (data){

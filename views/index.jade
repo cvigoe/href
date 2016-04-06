@@ -2,11 +2,11 @@ extends layout
 
 block content
   h1 href
-  button#logout Log Out
+  img(src="../images/logout.png", id='logout')
+  <br/>
   each val, index in JSON.parse(array)
-    #thread  
-      a(href = index)
-        h1= "Thread:" + index
+    a(href = index)
+      #thread  
         each value, index2 in val
-          p= value.name
+          h1= value.name
   script(src="/javascripts/main.js")
