@@ -19,9 +19,9 @@ a {
 
 div#me {
 	font-family: 'Lato', sans-serif;
-	color: #242B40;
 	text-align: right;
-	background: aliceblue;
+	color: #fff;
+	background: #4DA1DE;
 	display: inline-block;
 	width: 50%;
 	border-radius: 15px;
@@ -33,9 +33,9 @@ div#me {
 }
 
 div#you {
-	color: #fff;
+	color: #242B40;
+	background: aliceblue;
 	text-align: left;
-	background: #4DA1DE;
 	display: inline-block;
 	width: 50%;
 	border-radius: 15px;
