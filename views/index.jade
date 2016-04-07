@@ -1,9 +1,8 @@
 extends layout
 
 block content
-  h1 href
-  img(src="../images/logout.png", id='logout')
-  <br/>
+  #top
+    img(src="../images/logout.png", id='logout')
   each val, index in JSON.parse(array)
     a(href = index)
       #thread  
