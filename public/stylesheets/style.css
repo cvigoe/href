@@ -151,3 +151,17 @@ img#logout:hover {
     top: -11px;
     left: 47.7%;
 }
+
+#me #nostyle {
+	color: #fff;
+}
+
+#you #nostyle {
+	color: #242B40;
+}
+
+h6 {
+	color: aliceblue;
+    display: inline-block;
+    position: absolute;
+}

@@ -4,21 +4,25 @@ $("a").click(function (event){
     $('#fullthread').show();
     $.post( "/fullThread", {ID:$(this).attr("href")}, function ( data ) {
 			for(var message in data){
-				if(data[message].body && (data[message].body).indexOf("http") >= 0){
+				if( true ){
 					if(data[message].senderName == "Conor Igoe"){
-						text = ("<a href='" + data[message].body + "'><div id='me'>" + data[message].body + "</div></a>");
+
+						text = ("<div id='me'>" + data[message].body + "</div>");
 						$("#fullthread").append(text);
+						$("#fullthread").append("<h6>" + data[message].timestampDatetime + "</h6>");
 					}
 					else{
-						text = "<a href='" + data[message].body + "'><div id='you'>" + data[message].body + "</div></a>";
+						text = ("<div id='you'>" + data[message].body + "</div>");
 						$("#fullthread").append(text);
+						$("#fullthread").append("<h6>" + data[message].timestampDatetime + "</h6>");
 					}
 					$("#fullthread").append("<br/>");
 				}
 			}
 
 			$("#fullthread a").each(function (integer, element){
-				$(this).children("div").append("<h1>" + element.hostname + "</h1>");
+				$(this).parent("div").append("<h1>" + element.hostname + "</h1>");
+				$(this).parent("div").wrap("<a href='" + element.href + "'>" + "</a>");
 			});
 
 			$("#fullthread").append("<button id='back'>Go Back</button>");

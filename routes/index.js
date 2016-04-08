@@ -15,6 +15,7 @@ var threadsObject;
 var temp = [];
 var response;
 var current_user_ID;
+var trimmedHistory=[];
 
 // Routing
 
@@ -62,6 +63,9 @@ function loginCallback(err, api){
 };
 
 function getThreadListCallback(err, array){
+	console.log("ORIGINAL FORMAT".red);
+	console.log(array);
+	console.log("ORIGINAL FORMAT".red);
 	if(err) {
 		response.send(false);
 		return console.error(err);
@@ -71,8 +75,8 @@ function getThreadListCallback(err, array){
 		ID = array[i].threadID;
 		threads[ID] = array[i].participantIDs;
 	}
-	// console.log("Before conversion:".blue);
-	// console.log(threads);
+	console.log("Before conversion:".blue);
+	console.log(threads);
 	threads.convert();
 };
 
@@ -95,7 +99,6 @@ function getUserInfoCallback (error, object){
 		response.send(false);
 		return console.error(error);
 	}
-	// console.log(object);
 	for(var l in threadsObject){
 		for(var m in threadsObject[l]){
 			if(threadsObject[l][m] === current_user_ID){
@@ -106,6 +109,7 @@ function getUserInfoCallback (error, object){
 		}
 	}
 	console.log("SENDING RESPONSE".green);
+	console.log(threadsObject);
 	response.render("index", { array: JSON.stringify(threadsObject, replacer) });
 }
 
@@ -130,7 +134,8 @@ function getFullThreadPage (req, res, next){
 			return console.error(error)
 		}
 		console.log("Got Thread History, now sending...".blue);
-		res.send(history);
+		trimmedHistory = [];
+		res.send(trim(history));
 	});
 }
 
@@ -140,6 +145,24 @@ function getLogoutPage (req, res, next){
 	storedAPI.logout(function (error){
 		res.render("login",{firstTime: false });
 	});
+}
+
+function trim (history){
+	for (var message in history){
+		if(history[message].body.indexOf("http") >= 0){
+			history[message].body = urlify(history[message].body);
+			trimmedHistory.push(history[message]);
+			console.log(history[message]);
+		}
+	}
+	return trimmedHistory;
+}
+
+function urlify(text) {
+    var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    return text.replace(urlRegex, function(url) {
+        return '<a id="nostyle" href="' + url + '">' + url + '</a>';
+    });
 }
 
 module.exports = router;

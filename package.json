@@ -14,6 +14,7 @@
     "facebook-chat-api": "https://github.com/Schmavery/facebook-chat-api.git#master",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "urijs": "^1.17.1"
   }
 }
