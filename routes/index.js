@@ -7,7 +7,7 @@ var colors = require("colors");
 // Variables
 
 var router = express.Router();
-var threads = {};
+var threads = {hello};
 threads.convert = convert;
 var ID;
 var storedAPI;
