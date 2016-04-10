@@ -21,7 +21,8 @@ $("a").click(function (event){
 			}
 
 			$("#fullthread a").each(function (integer, element){
-				$(this).parent("div").append("<h1>" + element.hostname + "</h1>");
+				$(this).parent("#you").append("<h1><span id='youspan'>" + element.hostname + "</span></h1>");
+				$(this).parent("#me").append("<h1><span id='mespan'>" + element.hostname + "</span></h1>");
 				$(this).parent("div").wrap("<a href='" + element.href + "'>" + "</a>");
 			});
 
@@ -51,4 +52,8 @@ $("#logout").click(function (event){
 	$.get("/logout", function (data){
 		$("body").append(data);
 	});
+});
+
+$("#back").load(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, 1000);
 });

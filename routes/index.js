@@ -63,9 +63,9 @@ function loginCallback(err, api){
 };
 
 function getThreadListCallback(err, array){
-	console.log("ORIGINAL FORMAT".red);
-	console.log(array);
-	console.log("ORIGINAL FORMAT".red);
+	// console.log("ORIGINAL FORMAT".red);
+	// console.log(array);
+	// console.log("ORIGINAL FORMAT".red);
 	if(err) {
 		response.send(false);
 		return console.error(err);
@@ -76,8 +76,8 @@ function getThreadListCallback(err, array){
 		threads[i] = {  "Participants": array[i].participantIDs,
 						"ThreadID": ID };
 	}
-	console.log("Before conversion:".blue);
-	console.log(threads);
+	// console.log("Before conversion:".blue);
+	// console.log(threads);
 	threads.convert();
 };
 
@@ -112,7 +112,7 @@ function getUserInfoCallback (error, object){
 		}
 	}
 	console.log("SENDING RESPONSE".green);
-	console.log(JSON.parse(JSON.stringify(threadsArray)));
+	// console.log(JSON.parse(JSON.stringify(threadsArray)));
 	response.render("index", { array: JSON.stringify(threadsArray, replacer) });
 }
 
@@ -136,9 +136,9 @@ function getFullThreadPage (req, res, next){
 			res.render("login", {firstTime: false});
 			return console.error(error)
 		}
-		console.log("Got Thread History, now sending...".blue);
+		console.log("Got Thread History, trimming...".blue);
 		trimmedHistory = [];
-		res.send(trim(history));
+		trim(history, res);
 	});
 }
 
@@ -150,15 +150,21 @@ function getLogoutPage (req, res, next){
 	});
 }
 
-function trim (history){
+function trim (history, res){
 	for (var message in history){
+		if(history[message].body == undefined){
+			continue;
+		}
 		if(history[message].body.indexOf("http") >= 0){
 			history[message].body = urlify(history[message].body);
 			trimmedHistory.push(history[message]);
 			console.log(history[message]);
 		}
 	}
-	return trimmedHistory;
+
+	console.log("Trimmed history, now sending...".blue);
+
+	res.send(trimmedHistory);
 }
 
 function urlify(text) {
