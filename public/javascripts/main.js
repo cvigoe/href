@@ -33,6 +33,12 @@ $("a").click(function (event){
 	});
 });
 
+$("#thread").hover(function (event){
+	$(this).children("#participant").children("#test2").attr("-webkit-text-stroke: ", "2.4px white;")
+}, function (event){
+	$(this).children("#participant").children("#test2").attr("-webkit-text-stroke: ", "2.4px aliceblue;")
+});
+
 $("#logout").hover(function (event){
 	$("#logout").attr("src", "../images/logouth.png");
 }, function (event){

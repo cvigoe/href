@@ -7,11 +7,11 @@ var colors = require("colors");
 // Variables
 
 var router = express.Router();
-var threads = {hello};
+var threads = [];
 threads.convert = convert;
 var ID;
 var storedAPI;
-var threadsObject;
+var threadsArray;
 var temp = [];
 var response;
 var current_user_ID;
@@ -73,7 +73,8 @@ function getThreadListCallback(err, array){
 	console.log("Got Thread List:".blue);
 	for(var i in array){
 		ID = array[i].threadID;
-		threads[ID] = array[i].participantIDs;
+		threads[i] = {  "Participants": array[i].participantIDs,
+						"ThreadID": ID };
 	}
 	console.log("Before conversion:".blue);
 	console.log(threads);
@@ -82,13 +83,13 @@ function getThreadListCallback(err, array){
 
 function convert(){
 	console.log("Attempting to convert threads object...".blue);
-	threadsObject = this;
+	threadsArray = this;
 
 	temp = [];
 
-	for(var j in threadsObject){
-		for(var k in threadsObject[j]){
-			temp.push(threadsObject[j][k]);
+	for(var j in threadsArray){
+		for(var k in threadsArray[j]["Participants"]){
+			temp.push(threadsArray[j]["Participants"][k]);
 		}
 	}
 	storedAPI.getUserInfo(temp, getUserInfoCallback);
@@ -99,21 +100,23 @@ function getUserInfoCallback (error, object){
 		response.send(false);
 		return console.error(error);
 	}
-	for(var l in threadsObject){
-		for(var m in threadsObject[l]){
-			if(threadsObject[l][m] === current_user_ID){
-				threadsObject[l][m] = "me";
-			} else{
-				threadsObject[l][m] = object[threadsObject[l][m]];
+	for(var l in threadsArray){
+		for(var m in threadsArray[l]){
+			for(var x in threadsArray[l][m]){
+				if(threadsArray[l][m][x] === current_user_ID){
+					threadsArray[l][m][x] = "me";
+				} else{
+					threadsArray[l][m][x] = object[threadsArray[l][m][x]];
+				}
 			}
 		}
 	}
 	console.log("SENDING RESPONSE".green);
-	console.log(threadsObject);
-	response.render("index", { array: JSON.stringify(threadsObject, replacer) });
+	console.log(JSON.parse(JSON.stringify(threadsArray)));
+	response.render("index", { array: JSON.stringify(threadsArray, replacer) });
 }
 
-// Function to prevent the method from being passed to Jade in the threadsObject
+// Function to prevent the method from being passed to Jade in the threadsArray
 
 function replacer(key, value) {
 	if (value === "convert") {

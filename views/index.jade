@@ -3,9 +3,13 @@ extends layout
 block content
   #top
     img(src="../images/logout.png", id='logout')
-  each val, index in JSON.parse(array)
-    a(href = index)
-      #thread  
-        each value, index2 in val
-          h1= value.name
+  each value, key in JSON.parse(array)
+    a(href = value["ThreadID"])
+      #thread
+        each value2, key2 in value["Participants"]
+          #participant
+            - for (var i = 1; i < 4; i++) {
+            div(id="test"+i)
+              h1= value2.name
+            - }
   script(src="/javascripts/main.js")
