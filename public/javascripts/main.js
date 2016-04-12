@@ -1,7 +1,7 @@
 $("a").click(function (event){
 	event.preventDefault();
     $('#index').hide();
-    $('#fullthread').show();
+    $('#loading').show();
     $.post( "/fullThread", {ID:$(this).attr("href")}, function ( data ) {
 			for(var message in data){
 				if( true ){
@@ -26,9 +26,16 @@ $("a").click(function (event){
 				$(this).parent("div").wrap("<a href='" + element.href + "'>" + "</a>");
 			});
 
-			$("#fullthread").append("<button id='back'>Go Back</button>");
+			$("#fullthread").prepend("<button id='back'>Go Back</button><br/>");
+			$('#loading').hide();
+			$('#fullthread').show();
+
+			$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 0);
+
+
 			$("#back").click(function (event){
 				$("#fullthread").empty();
+				window.scrollTo(0, 0);
 				$("#index").show();
 			});
 	});
@@ -52,8 +59,4 @@ $("#logout").click(function (event){
 	$.get("/logout", function (data){
 		$("body").append(data);
 	});
-});
-
-$("#back").load(function() {
-  $("html, body").animate({ scrollTop: $(document).height() }, 1000);
 });

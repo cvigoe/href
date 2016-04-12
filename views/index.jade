@@ -5,8 +5,9 @@ block content
     img(src="../images/logout.png", id='logout')
   each value, key in JSON.parse(array)
     a(href = value["ThreadID"])
-      #thread
+      .thread
         each value2, key2 in value["Participants"]
           h1
             span= value2.name
   script(src="/javascripts/main.js")
+  script(src="/javascripts/grid.js")

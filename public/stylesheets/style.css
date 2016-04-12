@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  min-width: 300px;
   background: linear-gradient(#274A75, #192F4A);
   padding: 50px;
   font-family: 'Lato', sans-serif;
@@ -49,7 +50,9 @@ div#you {
 #login{
 	background: aliceblue;
 	margin: auto;
-	width: 400px;
+	width: 90%;
+	min-width: 300px; 
+	max-width: 400px;
 	padding: 20px;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
@@ -70,7 +73,9 @@ h2 {
 	cursor:pointer;
 	background: #53ABEA;
 	margin: auto;
-	width: 400px;
+	width: 90%;
+	min-width: 300px; 
+	max-width: 400px;
 	padding: 20px;
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
@@ -109,13 +114,16 @@ form input {
     text-indent: 15px;
 }
 
-#thread {
+.thread {
 	background: aliceblue;
 	margin: 9px;
 	width: 300px;
 	padding: 20px;
 	border-radius: 6px;
 	display: inline-block;
+	position: absolute;
+	left:0px;
+	top: 0px;
 }
 
 img#logout {
@@ -142,10 +150,12 @@ img#logout:hover {
 	position: fixed;
     top: 0;
     text-align: center;
-    /*background: aliceblue;*/
+    /*background: #264771;*/
     width: 100%;
     margin-left: -58px;
     height: 66px;
+    /*z-index: 10;*/
+    /*box-shadow: 0px 3px 10px #192F4A;*/
 }
 
 #top h1{
@@ -202,11 +212,27 @@ span:hover {
 }
 
 
+#index {
+	width:1077px;
+	margin:0px auto;
+	position: relative;
+}
 
 
 
-
-
+#logotop{
+	color: #000;
+    /*  shadows render better in certain browsers than text, first rule is for older browser support  */
+    text-shadow: 0 0 #000, .08em 0 0 #264771, 0 0, -.08em 0 0 #264771;
+    /*  gradient background allows us to use css only & re-position it  */
+    background: -webkit-linear-gradient(#000, #000) center 1.06em no-repeat;
+    background: linear-gradient(#000, #000) center 1.06em no-repeat;
+    /*  can precisely control size in relation to the text  */
+    background-size: 85% 3px;
+    /*  now the underline supports transitions  */
+    -webkit-transition: .2s ease;
+    transition: .2s ease;
+}
 
 #logo{
 	color: #242B40;
@@ -227,8 +253,21 @@ span:hover {
   background-size: 100% 3px;
 }
 
+#back{
+	position: fixed;
+    left: 90%;
+}
+
 h6 {
 	color: aliceblue;
     display: inline-block;
-    position: absolute;
+    position: relative;
+}
+
+@media screen and (min-width: 630px) {
+    h6 {
+		color: aliceblue;
+    	display: inline-block;
+    	position: absolute;
+	}
 }

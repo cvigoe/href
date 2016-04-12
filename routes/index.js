@@ -59,7 +59,7 @@ function loginCallback(err, api){
 
 	console.log("Logged in with facebook-chat-api, attempting to get Thread List...".blue);
 	storedAPI = api;
-	api.getThreadList(1, 50, getThreadListCallback);
+	api.getThreadList(1, 300, getThreadListCallback);
 };
 
 function getThreadListCallback(err, array){
@@ -131,11 +131,14 @@ function getFullThreadPage (req, res, next){
 	console.log("Got Full Thread Page, attempting to get thread history...".blue);
 	// console.log("ID".green + req.body.ID);
 	ID = req.body.ID;
-	storedAPI.getThreadHistory(ID, 1, 1000, null, function (error, history){
+	storedAPI.getThreadHistory(ID, 1, 10000, null, function (error, history){
 		if(error){
 			res.render("login", {firstTime: false});
 			return console.error(error)
 		}
+		console.log("test".red);
+		console.log(history);
+		console.log("test".red);
 		console.log("Got Thread History, trimming...".blue);
 		trimmedHistory = [];
 		trim(history, res);
