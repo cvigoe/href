@@ -2,7 +2,7 @@ function renderGrid(){
 
   if($(window).width() > 900){
     var blocks = document.getElementsByClassName("thread");
-    var pad = 10, cols = Math.floor(($(window).width())/40), newleft, newtop;
+    var pad = 10, cols = Math.floor(($(window).width())/400), newleft, newtop;
     reset();
     $("#index").css("width", "1077px");
     $(".thread").css("position", "absolute");
