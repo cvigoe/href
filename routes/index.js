@@ -136,9 +136,6 @@ function getFullThreadPage (req, res, next){
 			res.render("login", {firstTime: false});
 			return console.error(error)
 		}
-		console.log("test".red);
-		console.log(history);
-		console.log("test".red);
 		console.log("Got Thread History, trimming...".blue);
 		trimmedHistory = [];
 		trim(history, res);
@@ -161,7 +158,6 @@ function trim (history, res){
 		if(history[message].body.indexOf("http") >= 0){
 			history[message].body = urlify(history[message].body);
 			trimmedHistory.push(history[message]);
-			console.log(history[message]);
 		}
 	}
 
