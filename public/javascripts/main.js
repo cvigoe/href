@@ -23,7 +23,7 @@ $("a").click(function (event){
 			$("#fullthread a").each(function (integer, element){
 				$(this).parent("#you").append("<h1><span id='youspan'>" + element.hostname + "</span></h1>");
 				$(this).parent("#me").append("<h1><span id='mespan'>" + element.hostname + "</span></h1>");
-				$(this).parent("div").wrap("<a href='" + element.href + "'>" + "</a>");
+				$(this).parent("div").wrap("<a href='" + element.href + "' target='_blank'>" + "</a>");
 			});
 			underline();
 			$("#fullthread").prepend("<button id='back'>Back</button><br/>");
