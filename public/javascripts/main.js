@@ -26,7 +26,7 @@ $("a").click(function (event){
 				$(this).parent("div").wrap("<a href='" + element.href + "'>" + "</a>");
 			});
 
-			$("#fullthread").prepend("<button id='back'>Go Back</button><br/>");
+			$("#fullthread").prepend("<button id='back'>Back</button><br/>");
 			$('#loading').hide();
 			$('#fullthread').show();
 

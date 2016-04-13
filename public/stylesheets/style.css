@@ -5,13 +5,15 @@ html {
 body {
   min-width: 300px;
   background: linear-gradient(#274A75, #192F4A);
-  padding: 50px;
+  padding-top: 50px;
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   text-align: center;
   max-height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  width: 100%;
+  margin: 0px;
 }
 
 a {
@@ -29,7 +31,7 @@ div#me {
 	padding: 15px;
 	margin: 9px;
 	word-wrap:break-word;
-	min-width: 400px;
+	min-width: 300px;
     max-width: 700px;
 }
 
@@ -43,14 +45,14 @@ div#you {
 	padding: 15px;
 	margin: 9px;
 	word-wrap:break-word;
-	 min-width: 400px;
+	min-width: 300px;
     max-width: 700px;
 }
 
 #login{
 	background: aliceblue;
-	margin: auto;
-	width: 90%;
+	margin: 15px auto 0px;
+	width: 80%;
 	min-width: 300px; 
 	max-width: 400px;
 	padding: 20px;
@@ -73,7 +75,7 @@ h2 {
 	cursor:pointer;
 	background: #53ABEA;
 	margin: auto;
-	width: 90%;
+	width: 80%;
 	min-width: 300px; 
 	max-width: 400px;
 	padding: 20px;
