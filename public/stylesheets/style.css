@@ -190,10 +190,10 @@ span:hover {
 	color: aliceblue;	
 	/*  shadows render better in certain browsers than text, first rule is for older browser support  */
     text-shadow: 0 0 #4DA1DE, .08em 0 0 #4DA1DE, 0 0, -.08em 0 0 #4DA1DE;
-  /*  gradient background allows us to use css only & re-position it  */
-  background: -webkit-linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
-  background: linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
-  background-size: 85% 3px;
+    /*  gradient background allows us to use css only & re-position it  */
+    background: -webkit-linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
+    background: linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
+    background-size: 85% 3px;
 }
 
 #mespan:hover{
@@ -204,10 +204,10 @@ span:hover {
 	color: #242B40;	
 	/*  shadows render better in certain browsers than text, first rule is for older browser support  */
     text-shadow: 0 0 #242B40, .08em 0 0 aliceblue, 0 0, -.08em 0 0 aliceblue;
-  /*  gradient background allows us to use css only & re-position it  */
-  background: -webkit-linear-gradient(#242B40, #242B40) center 1.06em no-repeat;
-  background: linear-gradient(#242B40, #242B40) center 1.06em no-repeat;
-  background-size: 85% 3px;
+    /*  gradient background allows us to use css only & re-position it  */
+    background: -webkit-linear-gradient(#242B40, #242B40) center 1.06em no-repeat;
+    background: linear-gradient(#242B40, #242B40) center 1.06em no-repeat;
+    background-size: 85% 3px;
 }
 
 #youspan:hover{

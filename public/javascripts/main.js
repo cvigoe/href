@@ -5,7 +5,7 @@ $("a").click(function (event){
     $.post( "/fullThread", {ID:$(this).attr("href")}, function ( data ) {
 			for(var message in data){
 				if( true ){
-					if(data[message].senderName == "Conor Igoe"){
+					if(data[message].senderName == "me"){
 
 						text = ("<div id='me'>" + data[message].body + "</div>");
 						$("#fullthread").append(text);
@@ -25,7 +25,7 @@ $("a").click(function (event){
 				$(this).parent("#me").append("<h1><span id='mespan'>" + element.hostname + "</span></h1>");
 				$(this).parent("div").wrap("<a href='" + element.href + "'>" + "</a>");
 			});
-
+			underline();
 			$("#fullthread").prepend("<button id='back'>Back</button><br/>");
 			$('#loading').hide();
 			$('#fullthread').show();
@@ -60,3 +60,22 @@ $("#logout").click(function (event){
 		$("body").append(data);
 	});
 });
+
+window.addEventListener("resize", underline, false);
+window.addEventListener("load", underline, false);
+underline();
+function underline (){
+	if($(window).width() < 900){
+	  $("#logo").css("background-size", "100% 3px");
+	  $("#logotop").css("background-size", "100% 3px");
+	  $("#youspan").css("background-size", "100% 3px");
+	  $("#mepsan").css("background-size", "100% 3px");
+	  $("span").css("background-size", "100% 3px");
+	} else{
+	  $("#logo").removeAttr('style');
+	  $("#logotop").removeAttr('style');
+	  $("#youspan").removeAttr('style');
+	  $("#mepsan").removeAttr('style');
+	  $("span").removeAttr('style');
+	}
+}

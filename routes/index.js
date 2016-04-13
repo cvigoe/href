@@ -56,7 +56,8 @@ function loginCallback(err, api){
 	}
 
 	current_user_ID = api.getCurrentUserID();
-
+	console.log("Current user:".green);
+	console.log("     " + current_user_ID);
 	console.log("Logged in with facebook-chat-api, attempting to get Thread List...".blue);
 	storedAPI = api;
 	api.getThreadList(1, 300, getThreadListCallback);
@@ -156,6 +157,9 @@ function trim (history, res){
 			continue;
 		}
 		if(history[message].body.indexOf("http") >= 0){
+			if(history[message].senderID == "fbid:" + current_user_ID){
+				history[message].senderName = "me";
+			}
 			history[message].body = urlify(history[message].body);
 			trimmedHistory.push(history[message]);
 		}

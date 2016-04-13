@@ -35,4 +35,23 @@ $(document).ready(function(){
       }
     });
   });
+
+  window.addEventListener("resize", underline, false);
+  window.addEventListener("load", underline, false);
+
+  function underline (){
+    if($(window).width() < 900){
+      $("#logo").css("background-size", "100% 3px");
+      $("#logotop").css("background-size", "100% 3px");
+      $("#youspan").css("background-size", "100% 3px");
+      $("#mepsan").css("background-size", "100% 3px");
+      $("span").css("background-size", "100% 3px");
+    } else{
+      $("#logo").removeAttr('style');
+      $("#logotop").removeAttr('style');
+      $("#youspan").removeAttr('style');
+      $("#mepsan").removeAttr('style');
+      $("span").removeAttr('style');
+    }
+  }
 });
