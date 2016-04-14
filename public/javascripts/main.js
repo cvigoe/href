@@ -30,8 +30,19 @@ $("a").click(function (event){
 			$('#loading').hide();
 			$('#fullthread').show();
 
-			$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 0);
+			$(".nostyleFB").each(function (integer, element){
+				console.log("DOMAIN".green);
+				console.log($(element).text());
+				console.log("DOMAIN".green);
+				if($(element).text() === "null"){
+					$(this).parent().children("h1").children("span").text($(element).hostname);
+				} else{
+					$(this).parent().children("h1").children("span").text($(element).text());
+					$(this).text($(element).attr("href"));
+				}
+			});
 
+			$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 0);
 
 			$("#back").click(function (event){
 				$("#fullthread").empty();

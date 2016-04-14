@@ -156,12 +156,22 @@ function trim (history, res){
 		if(history[message].body == undefined){
 			continue;
 		}
+		// console.log("message".blue);
+		// console.log(history[message]);
 		if(history[message].body.indexOf("http") >= 0){
 			if(history[message].senderID == "fbid:" + current_user_ID){
 				history[message].senderName = "me";
 			}
 			history[message].body = urlify(history[message].body);
 			trimmedHistory.push(history[message]);
+		} else if(history[message].attachments.length > 0){
+			for(i = 0; i < history[message].attachments.length; i++){
+				if(history[message].attachments[i].type === "share" && history[message].attachments[i].facebookUrl != null){
+					history[message].body += "<br/>";
+					history[message].body += urlifyFB(history[message].attachments[i]);
+					trimmedHistory.push(history[message]);
+				}
+			}
 		}
 	}
 
@@ -170,10 +180,17 @@ function trim (history, res){
 	res.send(trimmedHistory);
 }
 
+function urlifyFB(attachment) {
+    var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    return attachment.facebookUrl.replace(urlRegex, function(url) {
+        return '<a class="nostyleFB" target="_blank" href="' + url + '">' + attachment.source + '</a>';
+    });
+}
+
 function urlify(text) {
     var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
     return text.replace(urlRegex, function(url) {
-        return '<a id="nostyle" href="' + url + '">' + url + '</a>';
+        return '<a class="nostyle" target="_blank" href="' + url + '">' + url + '</a>';
     });
 }
 

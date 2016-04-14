@@ -54,4 +54,22 @@ $(document).ready(function(){
       $("span").removeAttr('style');
     }
   }
+
+// $("#loading").append("<a href='' style='color:white;'></a>");
+// $("#loading a").attr("href", "www.hackernews.com");
+// $("#loading a").text("www.hackernews.com");
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
