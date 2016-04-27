@@ -2,9 +2,15 @@ html {
   height: 100%;
 }
 
+h4 {
+  margin-top: 0;
+}
+
 body {
   min-width: 300px;
-  background: linear-gradient(#274A75, #192F4A);
+  background: #121725;
+  background-image: -webkit-linear-gradient(top ,#274A75, #192F4A);
+  background-image: linear-gradient(to bottom,#274A75, #192F4A);
   padding-top: 50px;
   font-family: 'Lato', sans-serif;
   font-size: 14px;
@@ -95,11 +101,11 @@ h2 {
 	display: none;
 }
 
-img{
+/*img{
 	width: 60px;
 	position: relative;
 	top: 200px;
-}
+}*/
 
 form input {
 	outline: 0;
@@ -222,7 +228,6 @@ span:hover {
 }
 
 
-
 #logotop{
 	color: #000;
     /*  shadows render better in certain browsers than text, first rule is for older browser support  */
@@ -267,6 +272,10 @@ h6 {
     position: relative;
 }
 
+h5 {
+  color: #475263;
+}
+
 @media screen and (min-width: 630px) {
     h6 {
 		color: aliceblue;
@@ -275,6 +284,36 @@ h6 {
 	}
 }
 
+#footer {
+    background: #121725;
+    color: #65768E;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    width: 100%;
+    text-align: -webkit-center;
+}
+#footer-text {
+  display: none;
+  max-width: 720px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom:20px;
+}
+
+#icon {
+  cursor:pointer;
+  opacity: 0.1;
+  width: 60px;
+  padding: 10px;
+}
 .nostyle{
 	
+}
+
+#loading img {
+  width: 60px;
+  position: relative;
+  top: 200px;
+
 }
