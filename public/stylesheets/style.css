@@ -301,7 +301,7 @@ h5 {
   padding-bottom:20px;
 }
 
-#icon {
+#icon, #iconu{
   cursor:pointer;
   opacity: 0.1;
   width: 60px;

