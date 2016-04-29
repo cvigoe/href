@@ -1,8 +1,8 @@
 function renderGrid(){
 
-  if($(window).width() > 900){
+  if($(window).width() > 600){
     var blocks = document.getElementsByClassName("thread");
-    var pad = 10, cols = Math.floor(($(window).width())/400), newleft, newtop;
+    var pad = 10, cols = Math.floor(($(window).width())/360), newleft, newtop;
     reset();
     $("#index").css("width", "1077px");
     $(".thread").css("position", "absolute");
@@ -20,9 +20,9 @@ function renderGrid(){
         blocks[i].style.left = newleft+"px";  
       }
     }
-    $("#index").css("width", cols*358 + "px");
+    $("#index").css("width", cols*300 + "px");
   } else{
-    $("#index").css("width", "358px");
+    $("#index").css("width", "300px");
     $(".thread").css("position", "inherit");
   }
 }

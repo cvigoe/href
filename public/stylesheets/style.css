@@ -37,7 +37,7 @@ div#me {
 	padding: 15px;
 	margin: 9px;
 	word-wrap:break-word;
-	min-width: 300px;
+	min-width: 270px;
     max-width: 700px;
 }
 
@@ -51,19 +51,23 @@ div#you {
 	padding: 15px;
 	margin: 9px;
 	word-wrap:break-word;
-	min-width: 300px;
+	min-width: 270px;
     max-width: 700px;
 }
 
 #login{
 	background: aliceblue;
 	margin: 15px auto 0px;
-	width: 80%;
-	min-width: 300px; 
-	max-width: 400px;
+	width: 70%;
+	min-width: 250px; 
+	max-width: 360px;
 	padding: 20px;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
+}
+#login h1{
+    position: relative;
+    bottom: 9px;
 }
 
 h1 {
@@ -81,9 +85,9 @@ h2 {
 	cursor:pointer;
 	background: #53ABEA;
 	margin: auto;
-	width: 80%;
-	min-width: 300px; 
-	max-width: 400px;
+	width: 70%;
+	min-width: 250px; 
+	max-width: 360px;
 	padding: 20px;
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
@@ -126,13 +130,17 @@ form input {
 .thread {
 	background: aliceblue;
 	margin: 9px;
-	width: 300px;
+	width: 240px;
 	padding: 20px;
 	border-radius: 6px;
 	display: inline-block;
 	position: absolute;
 	left:0px;
 	top: 0px;
+}
+
+.thread h1 {
+  font-size: 2.0em;
 }
 
 img#logout {
