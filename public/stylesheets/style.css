@@ -1,3 +1,24 @@
+#spacer {
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#indexspacer {
+  padding-top: 50px;
+}
+
+@media screen and (min-width: 340px) {
+  #spacer {
+      padding: 4%;
+  }
+
+  #index{
+    padding-top: 0px;
+  }
+
+}
+
 html {
   height: 100%;
 }
@@ -11,7 +32,7 @@ body {
   background: #121725;
   background-image: -webkit-linear-gradient(top ,#274A75, #192F4A);
   background-image: linear-gradient(to bottom,#274A75, #192F4A);
-  padding-top: 50px;
+  /*padding-top: 50px;*/
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   text-align: center;
@@ -20,6 +41,7 @@ body {
   background-attachment: fixed;
   width: 100%;
   margin: 0px;
+  min-height: 410px;
 }
 
 a {
@@ -276,7 +298,7 @@ span:hover {
 
 h6 {
 	color: aliceblue;
-    display: inline-block;
+    display: block;
     position: relative;
 }
 

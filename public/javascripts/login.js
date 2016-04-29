@@ -55,6 +55,7 @@ $(document).ready(function(){
         $("#login_btn").show();
       } else {
         $("#loading").hide();
+        $("#spacer").hide();
         $("#index").append(data);
       }
     });

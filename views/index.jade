@@ -3,6 +3,7 @@ extends layout
 block content
   #top
     img(src="../images/logout.png", id='logout')
+  #indexspacer
   each value, key in JSON.parse(array)
     a(href = value["ThreadID"])
       .thread

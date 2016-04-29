@@ -6,6 +6,9 @@ function renderGrid(){
     reset();
     $("#index").css("width", "1077px");
     $(".thread").css("position", "absolute");
+    for(var i = 0; i < cols; i++){
+      $(blocks[i]).attr("style", "top:50px;");
+    }
     
     for(var i = 1; i < blocks.length; i++){
       if (i % cols == 0) {
