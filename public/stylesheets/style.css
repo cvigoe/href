@@ -8,7 +8,7 @@
   padding-top: 50px;
 }
 
-@media screen and (min-width: 340px) {
+@media screen and (min-width: 400px) {
   #spacer {
       padding: 4%;
   }
@@ -80,7 +80,7 @@ div#you {
 #login{
 	background: aliceblue;
 	margin: 15px auto 0px;
-	width: 70%;
+	width: 80%;
 	min-width: 250px; 
 	max-width: 360px;
 	padding: 20px;
@@ -107,7 +107,7 @@ h2 {
 	cursor:pointer;
 	background: #53ABEA;
 	margin: auto;
-	width: 70%;
+	width: 80%;
 	min-width: 250px; 
 	max-width: 360px;
 	padding: 20px;
