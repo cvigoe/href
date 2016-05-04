@@ -31,9 +31,6 @@ $("a").click(function (event){
 			$('#fullthread').show();
 
 			$(".nostyleFB").each(function (integer, element){
-				console.log("DOMAIN".green);
-				console.log($(element).text());
-				console.log("DOMAIN".green);
 				if($(element).text() === "null"){
 					$(this).parent().children("h1").children("span").text($(element).hostname);
 				} else{

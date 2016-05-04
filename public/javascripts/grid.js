@@ -23,7 +23,7 @@ function renderGrid(){
         blocks[i].style.left = newleft+"px";  
       }
     }
-    $("#index").css("width", cols*320 + "px");
+    $("#index").css("width", cols*300 + "px");
   } else{
     $("#index").css("width", "320px");
     $(".thread").css("position", "inherit");

@@ -28,7 +28,7 @@ h4 {
 }
 
 body {
-  min-width: 300px;
+  min-width: 320px;
   background: #121725;
   background-image: -webkit-linear-gradient(top ,#274A75, #192F4A);
   background-image: linear-gradient(to bottom,#274A75, #192F4A);
@@ -308,8 +308,8 @@ h5 {
 
 @media screen and (min-width: 630px) {
     h6 {
-		color: aliceblue;
-    	display: inline-block;
+		  color: aliceblue;
+    	display: -webkit-inline-box;
     	position: absolute;
 	}
 }
