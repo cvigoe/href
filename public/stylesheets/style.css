@@ -352,8 +352,20 @@ h5 {
 
 }
 
+
+
+
 #fullthread{
   position: relative;
-  left: 75px;
+  left: 0px;
   display: block;
+  text-align: -webkit-center;
+}
+
+
+
+@media screen and (min-width: 630px) {
+  #fullthread{
+    left: 75px;
+  }
 }
