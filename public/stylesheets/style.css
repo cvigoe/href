@@ -60,7 +60,7 @@ div#me {
 	margin: 9px;
 	word-wrap:break-word;
 	min-width: 270px;
-    max-width: 700px;
+  max-width: 700px;
 }
 
 div#you {
@@ -74,7 +74,7 @@ div#you {
 	margin: 9px;
 	word-wrap:break-word;
 	min-width: 270px;
-    max-width: 700px;
+  max-width: 700px;
 }
 
 #login{
@@ -297,6 +297,8 @@ span:hover {
 }
 
 h6 {
+  width: 150px;
+  height: 11px;
 	color: aliceblue;
     display: block;
     position: relative;
@@ -309,8 +311,10 @@ h5 {
 @media screen and (min-width: 630px) {
     h6 {
 		  color: aliceblue;
+          position: relative;
+    top: 31px;
     	display: -webkit-inline-box;
-    	position: absolute;
+    	/*position: absolute;*/
 	}
 }
 
@@ -346,4 +350,10 @@ h5 {
   position: relative;
   top: 200px;
 
+}
+
+#fullthread{
+  position: relative;
+  left: 75px;
+  display: block;
 }
