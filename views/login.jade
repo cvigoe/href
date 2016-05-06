@@ -2,19 +2,20 @@ extends layout
 
 block content
   #spacer
-  #login
-    #flash
-    if firstTime === false
-      h3 Logged Out
-    h1
-      span(id="logo") href
-    h2 Log in with your facebook account
-    form(name="login" id="login_form")
-      input(type="text", name="email", placeholder="Email", autocapitalize="off", autocorrect="off")
-      input(type="password", name="password", placeholder="Password")
-      input(type="submit", value="Log In" id="button")
-  #login_btn
-    h2 Log in
+  .loginContainer
+    #login
+      #flash
+      if firstTime === false
+        h3 Logged Out
+      h1
+        span(id="logo") href
+      h2 Log in with your facebook account
+      form(name="login" id="login_form")
+        input(type="text", name="email", placeholder="Email", autocapitalize="off", autocorrect="off")
+        input(type="password", name="password", placeholder="Password")
+        input(type="submit", value="Log In" id="button")
+    #login_btn
+      h2 Log in
   #loading(style="display:none")
     img(src="../images/load.gif", id="loading")
   #index
