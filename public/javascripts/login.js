@@ -18,6 +18,8 @@ $(document).ready(function(){
     $("#iconu").hide();
   });
 
+  setTimeout("$('.loginContainer').removeClass('hidden')", 100);
+
   $("#login_btn").click(function(){
     $("#login_form").submit();
   });

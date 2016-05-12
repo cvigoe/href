@@ -28,10 +28,11 @@ h4 {
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   min-width: 320px;
   background: #121725;
-  background-image: -webkit-linear-gradient(top ,#274A75, #192F4A);
-  background-image: linear-gradient(to bottom,#274A75, #192F4A);
+  background-image: -webkit-linear-gradient(top ,#121726, #192F4A);
+  background-image: linear-gradient(to bottom,#121726, #192F4A);
   /*padding-top: 50px;*/
   font-family: 'Lato', sans-serif;
   font-size: 14px;
@@ -49,6 +50,7 @@ a {
 }
 
 div#me {
+  -webkit-font-smoothing: antialiased;
 	font-family: 'Lato', sans-serif;
 	text-align: right;
 	color: #fff;
@@ -96,19 +98,28 @@ div#you {
 	border-top-right-radius: 6px;
 }
 #login h1{
+    font-weight: 400;
+    -webkit-text-stroke-width: 1px;
+    /*-webkit-text-stroke-color: #242B40;*/
     position: relative;
     bottom: 9px;
 }
 
 h1 {
+  font-weight: 400;
+  -webkit-text-stroke-width: 1px;
+  /*-webkit-text-stroke-color: #242B40;*/
+  -webkit-font-smoothing: antialiased;
 	font-family: 'Patua One', cursive;
 	/*text-decoration: underline;*/
 	font-size: 2.3em;
 }
 
 h2 {
+  -webkit-font-smoothing: antialiased;
 	font-family: 'Lato', sans-serif;
 	font-size: 1.4em;
+  font-weight: 400;
 }
 
 #login_btn {
@@ -126,6 +137,8 @@ h2 {
 }
 
 #login_btn h2 {
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
 	display: inline;
 	color: white;
 }
@@ -142,6 +155,7 @@ h2 {
 }*/
 
 form input {
+  -webkit-font-smoothing: antialiased;
 	outline: 0;
     padding-right: 5px;
     height: 30px;
@@ -319,9 +333,10 @@ h5 {
 @media screen and (min-width: 630px) {
     h6 {
 		  color: aliceblue;
-          position: relative;
-    top: 31px;
+      position: relative;
+      top: 31px;
     	display: -webkit-inline-box;
+      text-align: left;
     	/*position: absolute;*/
 	}
 }
