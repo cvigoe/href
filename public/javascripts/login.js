@@ -26,7 +26,6 @@ $(document).ready(function(){
 
   $("#login_form").submit(function (event){
     event.preventDefault();
-
     // event.stopPropagation();
     var email = $("input[name='email']").val();
     var password = $("input[name='password']").val();
@@ -66,7 +65,8 @@ $(document).ready(function(){
       } else {
         $("#loading").hide();
         $("#spacer").hide();
-        $("#index").append(data);
+        $("#index").append(data).delay(200).removeClass("hidden");
+        setTimeout('$("#logout").removeClass("hidden");', 200);
       }
     });
   });

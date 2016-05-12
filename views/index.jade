@@ -1,8 +1,6 @@
-extends layout
-
 block content
   #top
-    img(src="../images/logout.png", id='logout')
+    img(src="../images/exit.png", id='logout', class='hidden')
   #indexspacer
   each value, key in JSON.parse(array)
     a(href = value["ThreadID"])

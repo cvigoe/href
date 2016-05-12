@@ -188,12 +188,14 @@ form input {
 }
 
 img#logout {
+    transition: transform 150ms ease-out, opacity 150ms ease-out;
     position: fixed;
-    top: 10px;
-    right: 10px;
+    right: 3%;
     width: 40px;
+    top: 5%;
 }
 img#logout:hover {
+  opacity: .8;
 	cursor:pointer;
 }
 
@@ -274,6 +276,7 @@ span:hover {
 
 
 #index {
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
 	width:1077px;
 	margin:0px auto;
 	position: relative;
@@ -314,6 +317,7 @@ span:hover {
 }
 
 #back{
+  display: none;
 	position: fixed;
     left: 90%;
 }
@@ -389,6 +393,14 @@ h5 {
 
 @media screen and (min-width: 630px) {
   #fullthread{
+    /*left: 75px;*/
+  }
+  h6{
+    position: relative;
+    left: 75px;
+  }
+  #me, #you{
+    position: relative;
     left: 75px;
   }
 }
@@ -401,4 +413,18 @@ h5 {
     -o-transform: scale(0.01);
     -ms-transform: scale(0.01);*/
     transform: scale(0.95);
+}
+
+.back{
+    position: fixed;
+    right: 3%;
+    width: 40px;
+    top: 5%;
+}
+
+
+
+.back:hover{
+  cursor:pointer;
+  opacity: .8;
 }

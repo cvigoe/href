@@ -1,5 +1,6 @@
 $("a").click(function (event){
 	event.preventDefault();
+    // $('#index').addClass("hidden");
     $('#index').hide();
     $('#loading').show();
     $.post( "/fullThread", {ID:$(this).attr("href")}, function ( data ) {
@@ -27,6 +28,7 @@ $("a").click(function (event){
 			});
 			underline();
 			$("#fullthread").prepend("<button id='back'>Back</button><br/>");
+			$("#fullthread").prepend("<img src='/images/back.png' class = 'back'>" );
 			$('#loading').hide();
 			$('#fullthread').show();
 
@@ -41,7 +43,7 @@ $("a").click(function (event){
 
 			$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 0);
 
-			$("#back").click(function (event){
+			$(".back").click(function (event){
 				$("#fullthread").empty();
 				window.scrollTo(0, 0);
 				$("#index").show();
@@ -53,12 +55,6 @@ $("#thread").hover(function (event){
 	$(this).children("#participant").children("#test2").attr("-webkit-text-stroke: ", "2.4px white;")
 }, function (event){
 	$(this).children("#participant").children("#test2").attr("-webkit-text-stroke: ", "2.4px aliceblue;")
-});
-
-$("#logout").hover(function (event){
-	$("#logout").attr("src", "../images/logouth.png");
-}, function (event){
-	$("#logout").attr("src", "../images/logout.png");
 });
 
 $("#logout").click(function (event){
