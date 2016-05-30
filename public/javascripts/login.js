@@ -66,7 +66,7 @@ $(document).ready(function(){
         $("#loading").hide();
         $("#spacer").hide();
         $("#index").append(data).delay(200).removeClass("hidden");
-        setTimeout('$("#logout").removeClass("hidden");', 200);
+        setTimeout('$("#logout").removeClass("hidden");', 500);
       }
     });
   });
