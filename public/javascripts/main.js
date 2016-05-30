@@ -59,8 +59,11 @@ $("#thread").hover(function (event){
 
 $("#logout").click(function (event){
 	event.preventDefault();
-	$("body").empty();
+	$('#index').hide();
+    $('#loading').show();
 	$.get("/logout", function (data){
+		$("#loading").hide();
+		$("body").empty();
 		$("body").append(data);
 	});
 });
