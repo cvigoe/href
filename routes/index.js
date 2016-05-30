@@ -56,7 +56,6 @@ function loginCallback(err, api){
 	}
 
 	current_user_ID = api.getCurrentUserID();
-	console.log("test!!!!");
 	console.log("Current user:".green);
 	console.log("     " + current_user_ID);
 	console.log("Logged in with facebook-chat-api, attempting to get Thread List...".blue);
