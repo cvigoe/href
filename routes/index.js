@@ -165,6 +165,9 @@ function trim (history, res){
 			history[message].body = urlify(history[message].body);
 			trimmedHistory.push(history[message]);
 		} else if(history[message].attachments.length > 0){
+			if(history[message].senderID == "fbid:" + current_user_ID){
+				history[message].senderName = "me";
+			}
 			for(i = 0; i < history[message].attachments.length; i++){
 				if(history[message].attachments[i].type === "share" && history[message].attachments[i].facebookUrl != null){
 					history[message].body += "<br/>";
