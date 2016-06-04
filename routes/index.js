@@ -67,7 +67,6 @@ function getThreadListCallback(err, array){
 	// console.log("ORIGINAL FORMAT".red);
 	// console.log(array);
 	// console.log("ORIGINAL FORMAT".red);
-	debugger;
 	if(err) {
 		response.send(false);
 		return console.error(err);
@@ -76,7 +75,6 @@ function getThreadListCallback(err, array){
 	for(var i in array){
 		ID = array[i].threadID;
 		if(i == 187)
-			debugger;
 		if(ID.indexOf("id.") >= 0){
 			ID = ID.replace("id.", "");
 		}
@@ -85,7 +83,6 @@ function getThreadListCallback(err, array){
 	}
 	// console.log("Before conversion:".blue);
 	// console.log(threads);
-	debugger;
 	threads.convert();
 };
 
@@ -95,14 +92,11 @@ function convert(){
 
 	temp = [];
 
-	debugger;
-
 	for(var j in threadsArray){
 		for(var k in threadsArray[j]["Participants"]){
 			temp.push(threadsArray[j]["Participants"][k]);
 		}
 	}
-	debugger;
 	storedAPI.getUserInfo(temp, getUserInfoCallback);
 }
 
@@ -127,7 +121,6 @@ function getUserInfoCallback (error, object){
 			}
 		}
 	}
-	debugger;
 	console.log("SENDING RESPONSE".green);
 	// console.log(JSON.parse(JSON.stringify(threadsArray)));
 	response.render("index", { array: JSON.stringify(threadsArray, replacer) });
