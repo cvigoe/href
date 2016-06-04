@@ -67,6 +67,7 @@ function getThreadListCallback(err, array){
 	// console.log("ORIGINAL FORMAT".red);
 	// console.log(array);
 	// console.log("ORIGINAL FORMAT".red);
+	debugger;
 	if(err) {
 		response.send(false);
 		return console.error(err);
@@ -74,11 +75,17 @@ function getThreadListCallback(err, array){
 	console.log("Got Thread List:".blue);
 	for(var i in array){
 		ID = array[i].threadID;
+		if(i == 187)
+			debugger;
+		if(ID.indexOf("id.") >= 0){
+			ID = ID.replace("id.", "");
+		}
 		threads[i] = {  "Participants": array[i].participantIDs,
 						"ThreadID": ID };
 	}
 	// console.log("Before conversion:".blue);
 	// console.log(threads);
+	debugger;
 	threads.convert();
 };
 
@@ -88,11 +95,14 @@ function convert(){
 
 	temp = [];
 
+	debugger;
+
 	for(var j in threadsArray){
 		for(var k in threadsArray[j]["Participants"]){
 			temp.push(threadsArray[j]["Participants"][k]);
 		}
 	}
+	debugger;
 	storedAPI.getUserInfo(temp, getUserInfoCallback);
 }
 
@@ -106,12 +116,18 @@ function getUserInfoCallback (error, object){
 			for(var x in threadsArray[l][m]){
 				if(threadsArray[l][m][x] === current_user_ID){
 					threadsArray[l][m][x] = "me";
+				} else if(!object[threadsArray[l][m][x]]){
+					threadsArray[l][m][x] =  {
+       											"name": "Unknown User",
+        										"firstName": "Unknown User",
+      										};
 				} else{
 					threadsArray[l][m][x] = object[threadsArray[l][m][x]];
 				}
 			}
 		}
 	}
+	debugger;
 	console.log("SENDING RESPONSE".green);
 	// console.log(JSON.parse(JSON.stringify(threadsArray)));
 	response.render("index", { array: JSON.stringify(threadsArray, replacer) });
