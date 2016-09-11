@@ -64,25 +64,25 @@ div.me {
     word-wrap: break-word;
     min-width: 270px;
     max-width: 700px;
-    padding-left: 130px;
+    padding-left: 15px;
 }
 
 div.you {
   -webkit-font-smoothing: antialiased;
   font-family: 'Lato', sans-serif;  
   text-align: left;  
-	color: #242B40;
-	background: aliceblue;
-	display: inline-block;
-	/*width: 41%;*/
+  color: #242B40;
+  background: aliceblue;
+  display: inline-block;
+  /*width: 41%;*/
   width: 35%;
-	border-radius: 15px;
-	padding: 15px;
-	margin: 9px;
-	word-wrap:break-word;
-	min-width: 270px;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 9px;
+  word-wrap:break-word;
+  min-width: 270px;
   max-width: 700px;
-  padding-right: 130px;
+  padding-right: 15px;
 }
 
 .loginContainer{
@@ -94,14 +94,14 @@ div.you {
 }
 
 #login{
-	background: aliceblue;
-	margin: 15px auto 0px;
-	width: 80%;
-	min-width: 250px; 
-	max-width: 360px;
-	padding: 20px;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
+  background: aliceblue;
+  margin: 15px auto 0px;
+  width: 80%;
+  min-width: 250px; 
+  max-width: 360px;
+  padding: 20px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 #login h1{
     font-weight: 400;
@@ -116,53 +116,53 @@ h1 {
   -webkit-text-stroke-width: 1px;
   /*-webkit-text-stroke-color: #242B40;*/
   -webkit-font-smoothing: antialiased;
-	font-family: 'Patua One', cursive;
-	/*text-decoration: underline;*/
-	font-size: 2.3em;
+  font-family: 'Patua One', cursive;
+  /*text-decoration: underline;*/
+  font-size: 2.3em;
 }
 
 h2 {
   -webkit-font-smoothing: antialiased;
-	font-family: 'Lato', sans-serif;
-	font-size: 1.4em;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4em;
   font-weight: 400;
 }
 
 #login_btn {
-	cursor:pointer;
-	background: #53ABEA;
-	margin: auto;
-	width: 80%;
-	min-width: 250px; 
-	max-width: 360px;
-	padding: 20px;
-	border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	height: 10px;
-	display: inline-table;
+  cursor:pointer;
+  background: #53ABEA;
+  margin: auto;
+  width: 80%;
+  min-width: 250px; 
+  max-width: 360px;
+  padding: 20px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  height: 10px;
+  display: inline-table;
 }
 
 #login_btn h2 {
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-	display: inline;
-	color: white;
+  display: inline;
+  color: white;
 }
 
 #button {
-	visibility: hidden;
-	display: none;
+  visibility: hidden;
+  display: none;
 }
 
 /*img{
-	width: 60px;
-	position: relative;
-	top: 200px;
+  width: 60px;
+  position: relative;
+  top: 200px;
 }*/
 
 form input {
   -webkit-font-smoothing: antialiased;
-	outline: 0;
+  outline: 0;
     padding-right: 5px;
     height: 30px;
     font-family: 'Lato', sans-serif;
@@ -178,15 +178,15 @@ form input {
 }
 
 .thread {
-	background: aliceblue;
-	margin: 9px;
-	width: 240px;
-	padding: 20px;
-	border-radius: 6px;
-	display: inline-block;
-	position: absolute;
-	left:0px;
-	top: 0px;
+  background: aliceblue;
+  margin: 9px;
+  width: 240px;
+  padding: 20px;
+  border-radius: 6px;
+  display: inline-block;
+  position: absolute;
+  left:0px;
+  top: 0px;
 }
 
 .thread h1 {
@@ -202,21 +202,21 @@ img#logout {
 }
 img#logout:hover {
   opacity: .8;
-	cursor:pointer;
+  cursor:pointer;
 }
 
 .you a {
-	text-decoration: none;
-	/*color: #fff;	*/
+  text-decoration: none;
+  /*color: #fff;  */
 }
 
 .me a {
-	text-decoration: none;
-	/*color: #00B7FF;	*/
+  text-decoration: none;
+  /*color: #00B7FF; */
 }
 
 #top {
-	position: fixed;
+  position: fixed;
     top: 0;
     text-align: center;
     /*background: #264771;*/
@@ -228,7 +228,7 @@ img#logout:hover {
 }
 
 #top h1{
-	position: absolute;
+  position: absolute;
     top: -11px;
     left: 47.7%;
 }
@@ -253,8 +253,8 @@ span:hover {
 }
 
 #mespan{
-	color: aliceblue;	
-	/*  shadows render better in certain browsers than text, first rule is for older browser support  */
+  color: aliceblue; 
+  /*  shadows render better in certain browsers than text, first rule is for older browser support  */
     text-shadow: 0 0 #4DA1DE, .08em 0 0 #4DA1DE, 0 0, -.08em 0 0 #4DA1DE;
     /*  gradient background allows us to use css only & re-position it  */
     background: -webkit-linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
@@ -263,12 +263,12 @@ span:hover {
 }
 
 #mespan:hover{
-	background-size: 100% 3px;
+  background-size: 100% 3px;
 }
 
 #youspan{
-	color: #31b1c0;	
-	/*  shadows render better in certain browsers than text, first rule is for older browser support  */
+  color: #31b1c0; 
+  /*  shadows render better in certain browsers than text, first rule is for older browser support  */
     text-shadow: 0 0 #31b1c0, .08em 0 0 aliceblue, 0 0, -.08em 0 0 aliceblue;
     /*  gradient background allows us to use css only & re-position it  */
     background: -webkit-linear-gradient(#31b1c0, #31b1c0) center 1.06em no-repeat;
@@ -277,20 +277,20 @@ span:hover {
 }
 
 #youspan:hover{
-	background-size: 100% 3px;
+  background-size: 100% 3px;
 }
 
 
 #index {
   transition: transform 150ms ease-out, opacity 150ms ease-out;
-	width:1077px;
-	margin:0px auto;
-	position: relative;
+  width:1077px;
+  margin:0px auto;
+  position: relative;
 }
 
 
 #logotop{
-	color: #000;
+  color: #000;
     /*  shadows render better in certain browsers than text, first rule is for older browser support  */
     text-shadow: 0 0 #000, .08em 0 0 #264771, 0 0, -.08em 0 0 #264771;
     /*  gradient background allows us to use css only & re-position it  */
@@ -304,7 +304,7 @@ span:hover {
 }
 
 #logo{
-	color: #242B40;
+  color: #242B40;
     /*  shadows render better in certain browsers than text, first rule is for older browser support  */
     text-shadow: 0 0 #242B40, .08em 0 0 aliceblue, 0 0, -.08em 0 0 aliceblue;
     /*  gradient background allows us to use css only & re-position it  */
@@ -324,17 +324,17 @@ span:hover {
 
 #back{
   display: none;
-	position: fixed;
+  position: fixed;
     left: 90%;
 }
 
 h6 {
   width: 150px;
   height: 11px;
-	color: aliceblue;
+  color: aliceblue;
   display: block;
   position: relative;
-  left: -67%;
+  left: 0%;
 }
 
 h5 {
@@ -344,13 +344,26 @@ h5 {
 @media screen and (min-width: 630px) {
     h6 {
         left: -67%;
-		  color: aliceblue;
+      color: aliceblue;
       position: relative;
       top: 31px;
-    	display: -webkit-inline-box;
+      display: -webkit-inline-box;
       text-align: left;
-    	/*position: absolute;*/
-	}
+      /*position: absolute;*/
+  }
+
+  div.you {
+  padding-right: 130px;
+}
+div.me {
+    padding-left: 130px;
+}
+  .style{
+    display: initial;
+  }
+  .styley{
+      display: initial;
+  }
 }
 
 #footer {
@@ -377,7 +390,7 @@ h5 {
   padding: 10px;
 }
 .nostyle{
-	
+  
 }
 
 #loading img {
@@ -455,7 +468,7 @@ h5 {
     border-top-left-radius: 15px;
     padding: 15px;
     margin: 9px;
-    display: initial;
+    display: none;
     position: absolute;
     top: -9px;
     left: -9px;
@@ -477,7 +490,7 @@ h5 {
     border-top-right-radius: 15px;
     padding: 15px;
     margin: 9px;
-    display: initial;
+    display: none;
     position: absolute;
     top: -9px;
     left: 541px;
