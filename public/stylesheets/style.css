@@ -341,6 +341,53 @@ h5 {
   color: #475263;
 }
 
+.style{
+    float: left;
+    color: #4DA1DE;
+    background-color: aliceblue;
+    height: 99.125px;
+    width: 90px;
+    text-align: center;
+    /* margin: auto; */
+    border-top-left-radius: 15px;
+    padding: 15px;
+    padding-left: 18px;
+    margin: 9px;
+    display: none;
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    z-index: 12;
+    border-bottom-left-radius: 15px;
+    font-size: 72px;
+    font-family: Patua One;
+    vertical-align: middle;
+    line-height: inherit;
+}
+.styley{
+    float: right;
+    color: aliceblue;
+    background-color: #31b1c0;
+    height: 99.125px;
+    width: 90px;
+    text-align: center;
+    /* margin: auto; */
+    border-top-right-radius: 15px;
+    padding: 15px;
+    padding-right: 18px;
+    margin: 9px;
+    display: none;
+    position: absolute;
+    top: -9px;
+    left: 541px;
+    z-index: 12;
+    border-bottom-right-radius: 15px;
+    font-size: 72px;
+    font-family: Patua One;
+    vertical-align: middle;
+    line-height: inherit;
+}
+
 @media screen and (min-width: 630px) {
     h6 {
         left: -67%;
@@ -455,49 +502,4 @@ div.me {
 .back:hover{
   cursor:pointer;
   opacity: .8;
-}
-
-.style{
-    float: left;
-    color: #4DA1DE;
-    background-color: aliceblue;
-    height: 99.125px;
-    width: 90px;
-    text-align: center;
-    /* margin: auto; */
-    border-top-left-radius: 15px;
-    padding: 15px;
-    margin: 9px;
-    display: none;
-    position: absolute;
-    top: -9px;
-    left: -9px;
-    z-index: 12;
-    border-bottom-left-radius: 15px;
-    font-size: 72px;
-    font-family: Patua One;
-    vertical-align: middle;
-    line-height: inherit;
-}
-.styley{
-    float: right;
-    color: aliceblue;
-    background-color: #31b1c0;
-    height: 99.125px;
-    width: 90px;
-    text-align: center;
-    /* margin: auto; */
-    border-top-right-radius: 15px;
-    padding: 15px;
-    margin: 9px;
-    display: none;
-    position: absolute;
-    top: -9px;
-    left: 541px;
-    z-index: 12;
-    border-bottom-right-radius: 15px;
-    font-size: 72px;
-    font-family: Patua One;
-    vertical-align: middle;
-    line-height: inherit;
 }

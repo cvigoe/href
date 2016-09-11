@@ -1,6 +1,7 @@
 function renderGrid(){
 
   if($(window).width() > 600){
+    console.log("Hey conor!");
     var blocks = document.getElementsByClassName("thread");
     var pad = 10, cols = Math.floor(($(window).width())/360), newleft, newtop;
     reset();
@@ -34,7 +35,10 @@ renderGrid();
 window.addEventListener("load", renderGrid, false);
 window.addEventListener("resize", renderGrid, false);
 
-
 function reset(){
   $(".thread").removeAttr('style');
 }
+
+// $(".back").click(function (event){
+//   renderGrid();
+// });
