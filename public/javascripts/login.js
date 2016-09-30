@@ -25,17 +25,19 @@ $(document).ready(function(){
   });
 
   $("#login_form").submit(function (event){
+
     event.preventDefault();
-    // event.stopPropagation();
     var email = $("input[name='email']").val();
     var password = $("input[name='password']").val();
+
     $('.loginContainer').addClass("hidden");
     $('.loginContainer').delay(200).hide(0);
     $("#footer").hide();
-    // $("#login_btn").hide();
     $("#loading").delay(200).show(0);
+
     $.post("/index", {email: email, password: password}, function( data ) {
       $("#plead").hide();
+      
       if (data === "1"){
         $('.loginContainer').show();
         $('.loginContainer').removeClass("hidden");
@@ -47,7 +49,9 @@ $(document).ready(function(){
         $("#loading").hide();
         $("#login").show();
         $("#login_btn").show();
-      } else if (data === "2"){
+      } 
+
+      else if (data === "2"){
         $('.loginContainer').show();
         $('.loginContainer').removeClass("hidden");
         $("#footer").show();
@@ -55,14 +59,18 @@ $(document).ready(function(){
         $("#loading").hide();
         $("#login").show();
         $("#login_btn").show();
-      } else if (data === false){
+      } 
+
+      else if (data === false){
         $('.loginContainer').removeClass("hidden");
         $("#flash").html("<h3>Please try again later</h3>");
         $("#footer").show();
         $("#loading").hide();
         $("#login").show();
         $("#login_btn").show();
-      } else {
+      } 
+
+      else {
         $("#loading").hide();
         $("#spacer").hide();
         $("#index").append(data).delay(200).removeClass("hidden");
@@ -81,7 +89,9 @@ $(document).ready(function(){
       $("#youspan").css("background-size", "100% 3px");
       $("#mepsan").css("background-size", "100% 3px");
       $("span").css("background-size", "100% 3px");
-    } else{
+    } 
+
+    else{
       $("#logo").removeAttr('style');
       $("#logotop").removeAttr('style');
       $("#youspan").removeAttr('style');
@@ -89,22 +99,4 @@ $(document).ready(function(){
       $("span").removeAttr('style');
     }
   }
-
-// $("#loading").append("<a href='' style='color:white;'></a>");
-// $("#loading a").attr("href", "www.hackernews.com");
-// $("#loading a").text("www.hackernews.com");
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

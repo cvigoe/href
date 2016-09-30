@@ -38,7 +38,3 @@ window.addEventListener("resize", renderGrid, false);
 function reset(){
   $(".thread").removeAttr('style');
 }
-
-// $(".back").click(function (event){
-//   renderGrid();
-// });

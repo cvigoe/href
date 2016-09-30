@@ -31,6 +31,9 @@ function getLoginPage (req, res, next){
 }
 
 // Index Page
+//     1) login()
+//     2) getThreadList()
+//     3) 
 
 function getIndexPage(req, res, next){
 	console.log("Got Index Page, attempting to log in using facebook-chat-api...".blue);
@@ -64,25 +67,25 @@ function loginCallback(err, api){
 };
 
 function getThreadListCallback(err, array){
-	// console.log("ORIGINAL FORMAT".red);
-	// console.log(array);
-	// console.log("ORIGINAL FORMAT".red);
 	if(err) {
 		response.send(false);
 		return console.error(err);
 	}
 	console.log("Got Thread List:".blue);
+
+	// Tidy up inconsistent formatting for FB IDs
 	for(var i in array){
 		ID = array[i].threadID;
-		if(i == 187)
 		if(ID.indexOf("id.") >= 0){
 			ID = ID.replace("id.", "");
 		}
+
+		// Add each thread in array[] to threads[], getting rid of unneccessary data & simplifying structure for later
 		threads[i] = {  "Participants": array[i].participantIDs,
 						"ThreadID": ID };
 	}
-	// console.log("Before conversion:".blue);
-	// console.log(threads);
+
+	// Convert particpant IDs to FirstName LastName format
 	threads.convert();
 };
 
@@ -90,6 +93,7 @@ function convert(){
 	console.log("Attempting to convert threads object...".blue);
 	threadsArray = this;
 
+	// temp[] used to temporarily store the list of particpant IDs that need to be converted to names
 	temp = [];
 
 	for(var j in threadsArray){
@@ -97,6 +101,8 @@ function convert(){
 			temp.push(threadsArray[j]["Participants"][k]);
 		}
 	}
+
+	// use API to get names
 	storedAPI.getUserInfo(temp, getUserInfoCallback);
 }
 
@@ -105,24 +111,30 @@ function getUserInfoCallback (error, object){
 		response.send(false);
 		return console.error(error);
 	}
+
+	// Replace IDs with correct names
 	for(var l in threadsArray){
 		for(var m in threadsArray[l]){
 			for(var x in threadsArray[l][m]){
 				if(threadsArray[l][m][x] === current_user_ID){
+					// If current user's ID is encountered (they message themselves), flag it by using different formatting
 					threadsArray[l][m][x] = "me";
 				} else if(!object[threadsArray[l][m][x]]){
+					// If no name was found for user ID, list as unkown user
 					threadsArray[l][m][x] =  {
        											"name": "Unknown User",
         										"firstName": "Unknown User",
       										};
 				} else{
+					// Otherwise, replace the ID with the name
 					threadsArray[l][m][x] = object[threadsArray[l][m][x]];
 				}
 			}
 		}
 	}
+
+	// Send response with threads array, now formatted simply and with user IDs replaced with names
 	console.log("SENDING RESPONSE".green);
-	// console.log(JSON.parse(JSON.stringify(threadsArray)));
 	response.render("index", { array: JSON.stringify(threadsArray, replacer) });
 }
 
@@ -132,6 +144,7 @@ function replacer(key, value) {
 	if (value === "convert") {
 		return undefined;
 	}
+
 	return value;
 }
 
@@ -139,35 +152,33 @@ function replacer(key, value) {
 
 function getFullThreadPage (req, res, next){
 	console.log("Got Full Thread Page, attempting to get thread history...".blue);
-	// console.log("ID".green + req.body.ID);
+
+	// Capture the ID of the selected thread
 	ID = req.body.ID;
+
+	// Get the histroy up to 10000 messages (pagination coming soon!) using the captured ID
 	storedAPI.getThreadHistory(ID, 1, 10000, null, function (error, history){
 		if(error){
 			res.render("login", {firstTime: false});
 			return console.error(error)
 		}
 		console.log("Got Thread History, trimming...".blue);
+
+		// Trim all history apart from links using trim()
 		trimmedHistory = [];
 		trim(history, res);
 	});
 }
 
-// Logout Page
-
-function getLogoutPage (req, res, next){
-	storedAPI.logout(function (error){
-		res.render("login",{firstTime: false });
-	});
-}
+// Function to trim history of thread, leaving just the messages containing links
 
 function trim (history, res){
 	for (var message in history){
 		if(history[message].body == undefined){
 			continue;
 		}
-		// console.log("message".blue);
-		// console.log(history[message]);
 
+		// Regex pattern to be used on message body
 		var patt = new RegExp(/(\b(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)[-A-Z0-9+&@#\/%=~_|$?!:,.]*[A-Z0-9+&@#\/%=~_|$])/ig);
 
 		if(patt.test(history[message].body)){
@@ -191,7 +202,6 @@ function trim (history, res){
 	}
 
 	console.log("Trimmed history, now sending...".blue);
-
 	res.send(trimmedHistory);
 }
 
@@ -207,6 +217,14 @@ function urlify(text) {
     return text.replace(urlRegex, function(url) {
         return '<a class="nostyle" target="_blank" href="' + url + '">' + url + '</a>';
     });
+}
+
+// Logout Page
+
+function getLogoutPage (req, res, next){
+	storedAPI.logout(function (error){
+		res.render("login",{firstTime: false });
+	});
 }
 
 module.exports = router;

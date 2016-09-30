@@ -12,11 +12,9 @@
   #spacer {
       padding: 4%;
   }
-
   #index{
     padding-top: 0px;
   }
-
 }
 
 html {
@@ -33,7 +31,6 @@ body {
   background: #121725;
   background-image: -webkit-linear-gradient(top ,#121726, #192F4A);
   background-image: linear-gradient(to bottom,#121726, #192F4A);
-  /*padding-top: 50px;*/
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   text-align: center;
@@ -50,21 +47,20 @@ a {
 }
 
 div.me {
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Lato', sans-serif;
-    text-align: right;
-    color: #fff;
-    background: #4DA1DE;
-    display: inline-block;
-    /*width: 41%;*/
-    width: 35%;
-    border-radius: 15px;
-    padding: 15px;
-    margin: 9px;
-    word-wrap: break-word;
-    min-width: 270px;
-    max-width: 700px;
-    padding-left: 15px;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Lato', sans-serif;
+  text-align: right;
+  color: #fff;
+  background: #4DA1DE;
+  display: inline-block;
+  width: 35%;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 9px;
+  word-wrap: break-word;
+  min-width: 270px;
+  max-width: 700px;
+  padding-left: 15px;
 }
 
 div.you {
@@ -74,7 +70,6 @@ div.you {
   color: #242B40;
   background: aliceblue;
   display: inline-block;
-  /*width: 41%;*/
   width: 35%;
   border-radius: 15px;
   padding: 15px;
@@ -86,11 +81,7 @@ div.you {
 }
 
 .loginContainer{
-    /*-webkit-transition: all 1000ms linear;
-    -moz-transition: all 1000ms linear;
-    -ms-transition: all 1000ms linear;
-    -o-transition: all 1000ms linear;*/
-    transition: transform 150ms ease-out, opacity 150ms ease-out;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
 }
 
 #login{
@@ -104,20 +95,17 @@ div.you {
   border-top-right-radius: 6px;
 }
 #login h1{
-    font-weight: 400;
-    -webkit-text-stroke-width: 1px;
-    /*-webkit-text-stroke-color: #242B40;*/
-    position: relative;
-    bottom: 9px;
+  font-weight: 400;
+  -webkit-text-stroke-width: 1px;
+  position: relative;
+  bottom: 9px;
 }
 
 h1 {
   font-weight: 400;
   -webkit-text-stroke-width: 1px;
-  /*-webkit-text-stroke-color: #242B40;*/
   -webkit-font-smoothing: antialiased;
   font-family: 'Patua One', cursive;
-  /*text-decoration: underline;*/
   font-size: 2.3em;
 }
 
@@ -154,27 +142,22 @@ h2 {
   display: none;
 }
 
-/*img{
-  width: 60px;
-  position: relative;
-  top: 200px;
-}*/
 
 form input {
   -webkit-font-smoothing: antialiased;
   outline: 0;
-    padding-right: 5px;
-    height: 30px;
-    font-family: 'Lato', sans-serif;
-    font-size: 1em;
-    width: 50%;
-    border-radius: 4px;
-    border-style: solid;
-    border-color: #ADADAD;
-    border-width: 1px;
-    margin: 5px;
-    text-indent: 15px;
-    min-width: 225px;
+  padding-right: 5px;
+  height: 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  width: 50%;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #ADADAD;
+  border-width: 1px;
+  margin: 5px;
+  text-indent: 15px;
+  min-width: 225px;
 }
 
 .thread {
@@ -194,11 +177,11 @@ form input {
 }
 
 img#logout {
-    transition: transform 150ms ease-out, opacity 150ms ease-out;
-    position: fixed;
-    right: 3%;
-    width: 40px;
-    top: 5%;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+  position: fixed;
+  right: 3%;
+  width: 40px;
+  top: 5%;
 }
 img#logout:hover {
   opacity: .8;
@@ -207,30 +190,25 @@ img#logout:hover {
 
 .you a {
   text-decoration: none;
-  /*color: #fff;  */
 }
 
 .me a {
   text-decoration: none;
-  /*color: #00B7FF; */
 }
 
 #top {
   position: fixed;
-    top: 0;
-    text-align: center;
-    /*background: #264771;*/
-    width: 100%;
-    margin-left: -58px;
-    height: 66px;
-    /*z-index: 10;*/
-    /*box-shadow: 0px 3px 10px #192F4A;*/
+  top: 0;
+  text-align: center;
+  width: 100%;
+  margin-left: -58px;
+  height: 66px;
 }
 
 #top h1{
   position: absolute;
-    top: -11px;
-    left: 47.7%;
+  top: -11px;
+  left: 47.7%;
 }
 
 span{
@@ -255,11 +233,11 @@ span:hover {
 #mespan{
   color: aliceblue; 
   /*  shadows render better in certain browsers than text, first rule is for older browser support  */
-    text-shadow: 0 0 #4DA1DE, .08em 0 0 #4DA1DE, 0 0, -.08em 0 0 #4DA1DE;
-    /*  gradient background allows us to use css only & re-position it  */
-    background: -webkit-linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
-    background: linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
-    background-size: 85% 3px;
+  text-shadow: 0 0 #4DA1DE, .08em 0 0 #4DA1DE, 0 0, -.08em 0 0 #4DA1DE;
+  /*  gradient background allows us to use css only & re-position it  */
+  background: -webkit-linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
+  background: linear-gradient(aliceblue, aliceblue) center 1.06em no-repeat;
+  background-size: 85% 3px;
 }
 
 #mespan:hover{
@@ -269,11 +247,11 @@ span:hover {
 #youspan{
   color: #31b1c0; 
   /*  shadows render better in certain browsers than text, first rule is for older browser support  */
-    text-shadow: 0 0 #31b1c0, .08em 0 0 aliceblue, 0 0, -.08em 0 0 aliceblue;
-    /*  gradient background allows us to use css only & re-position it  */
-    background: -webkit-linear-gradient(#31b1c0, #31b1c0) center 1.06em no-repeat;
-    background: linear-gradient(#31b1c0, #31b1c0) center 1.06em no-repeat;
-    background-size: 85% 3px;
+  text-shadow: 0 0 #31b1c0, .08em 0 0 aliceblue, 0 0, -.08em 0 0 aliceblue;
+  /*  gradient background allows us to use css only & re-position it  */
+  background: -webkit-linear-gradient(#31b1c0, #31b1c0) center 1.06em no-repeat;
+  background: linear-gradient(#31b1c0, #31b1c0) center 1.06em no-repeat;
+  background-size: 85% 3px;
 }
 
 #youspan:hover{
@@ -291,30 +269,30 @@ span:hover {
 
 #logotop{
   color: #000;
-    /*  shadows render better in certain browsers than text, first rule is for older browser support  */
-    text-shadow: 0 0 #000, .08em 0 0 #264771, 0 0, -.08em 0 0 #264771;
-    /*  gradient background allows us to use css only & re-position it  */
-    background: -webkit-linear-gradient(#000, #000) center 1.06em no-repeat;
-    background: linear-gradient(#000, #000) center 1.06em no-repeat;
-    /*  can precisely control size in relation to the text  */
-    background-size: 85% 3px;
-    /*  now the underline supports transitions  */
-    -webkit-transition: .2s ease;
-    transition: .2s ease;
+  /*  shadows render better in certain browsers than text, first rule is for older browser support  */
+  text-shadow: 0 0 #000, .08em 0 0 #264771, 0 0, -.08em 0 0 #264771;
+  /*  gradient background allows us to use css only & re-position it  */
+  background: -webkit-linear-gradient(#000, #000) center 1.06em no-repeat;
+  background: linear-gradient(#000, #000) center 1.06em no-repeat;
+  /*  can precisely control size in relation to the text  */
+  background-size: 85% 3px;
+  /*  now the underline supports transitions  */
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
 }
 
 #logo{
   color: #242B40;
-    /*  shadows render better in certain browsers than text, first rule is for older browser support  */
-    text-shadow: 0 0 #242B40, .08em 0 0 aliceblue, 0 0, -.08em 0 0 aliceblue;
-    /*  gradient background allows us to use css only & re-position it  */
-    background: -webkit-linear-gradient(#242B40, #242B40) center 1.06em no-repeat;
-    background: linear-gradient(#242B40, #242B40) center 1.06em no-repeat;
-    /*  can precisely control size in relation to the text  */
-    background-size: 85% 3px;
-    /*  now the underline supports transitions  */
-    -webkit-transition: .2s ease;
-    transition: .2s ease;
+  /*  shadows render better in certain browsers than text, first rule is for older browser support  */
+  text-shadow: 0 0 #242B40, .08em 0 0 aliceblue, 0 0, -.08em 0 0 aliceblue;
+  /*  gradient background allows us to use css only & re-position it  */
+  background: -webkit-linear-gradient(#242B40, #242B40) center 1.06em no-repeat;
+  background: linear-gradient(#242B40, #242B40) center 1.06em no-repeat;
+  /*  can precisely control size in relation to the text  */
+  background-size: 85% 3px;
+  /*  now the underline supports transitions  */
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
 }
 
 #logo:hover {
@@ -325,7 +303,7 @@ span:hover {
 #back{
   display: none;
   position: fixed;
-    left: 90%;
+  left: 90%;
 }
 
 h6 {
@@ -342,69 +320,65 @@ h5 {
 }
 
 .style{
-    float: left;
-    color: #4DA1DE;
-    background-color: aliceblue;
-    height: 99.125px;
-    width: 90px;
-    text-align: center;
-    /* margin: auto; */
-    border-top-left-radius: 15px;
-    padding: 15px;
-    padding-left: 18px;
-    margin: 9px;
-    display: none;
-    position: absolute;
-    top: -9px;
-    left: -9px;
-    z-index: 12;
-    border-bottom-left-radius: 15px;
-    font-size: 72px;
-    font-family: Patua One;
-    vertical-align: middle;
-    line-height: inherit;
+  float: left;
+  color: #4DA1DE;
+  background-color: aliceblue;
+  height: 99.125px;
+  width: 90px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  padding: 15px;
+  padding-left: 18px;
+  margin: 9px;
+  display: none;
+  position: absolute;
+  top: -9px;
+  left: -9px;
+  z-index: 12;
+  border-bottom-left-radius: 15px;
+  font-size: 72px;
+  font-family: Patua One;
+  vertical-align: middle;
+  line-height: inherit;
 }
 .styley{
-    float: right;
-    color: aliceblue;
-    background-color: #31b1c0;
-    height: 99.125px;
-    width: 90px;
-    text-align: center;
-    /* margin: auto; */
-    border-top-right-radius: 15px;
-    padding: 15px;
-    padding-right: 18px;
-    margin: 9px;
-    display: none;
-    position: absolute;
-    top: -9px;
-    left: 541px;
-    z-index: 12;
-    border-bottom-right-radius: 15px;
-    font-size: 72px;
-    font-family: Patua One;
-    vertical-align: middle;
-    line-height: inherit;
+  float: right;
+  color: aliceblue;
+  background-color: #31b1c0;
+  height: 99.125px;
+  width: 90px;
+  text-align: center;
+  border-top-right-radius: 15px;
+  padding: 15px;
+  padding-right: 18px;
+  margin: 9px;
+  display: none;
+  position: absolute;
+  top: -9px;
+  left: 541px;
+  z-index: 12;
+  border-bottom-right-radius: 15px;
+  font-size: 72px;
+  font-family: Patua One;
+  vertical-align: middle;
+  line-height: inherit;
 }
 
 @media screen and (min-width: 630px) {
-    h6 {
-        left: -67%;
-      color: aliceblue;
-      position: relative;
-      top: 31px;
-      display: -webkit-inline-box;
-      text-align: left;
-      /*position: absolute;*/
+  h6 {
+    left: -67%;
+    color: aliceblue;
+    position: relative;
+    top: 31px;
+    display: -webkit-inline-box;
+    text-align: left;
   }
-
   div.you {
-  padding-right: 130px;
-}
-div.me {
+    padding-right: 130px;
+  }
+  div.me {
     padding-left: 130px;
-}
+  }
   .style{
     display: initial;
   }
@@ -414,13 +388,13 @@ div.me {
 }
 
 #footer {
-    background: #121725;
-    color: #65768E;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    width: 100%;
-    text-align: -webkit-center;
+  background: #121725;
+  color: #65768E;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  width: 100%;
+  text-align: -webkit-center;
 }
 #footer-text {
   display: none;
@@ -467,9 +441,6 @@ div.me {
 
 
 @media screen and (min-width: 630px) {
-  #fullthread{
-    /*left: 75px;*/
-  }
   h6{
     position: relative;
     left: -67%;
@@ -481,23 +452,16 @@ div.me {
 }
 
 .hidden {
-    /*-moz-opacity: 0;*/
-    opacity: 0;
-    /*-moz-transform: scale(0.01);
-    -webkit-transform: scale(0.01);
-    -o-transform: scale(0.01);
-    -ms-transform: scale(0.01);*/
-    transform: scale(0.95);
+  opacity: 0;
+  transform: scale(0.95);
 }
 
 .back{
-    position: fixed;
-    right: 3%;
-    width: 40px;
-    top: 5%;
+  position: fixed;
+  right: 3%;
+  width: 40px;
+  top: 5%;
 }
-
-
 
 .back:hover{
   cursor:pointer;
