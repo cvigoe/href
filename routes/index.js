@@ -19,10 +19,18 @@ var trimmedHistory=[];
 
 // Routing
 
+router.get('/justForWu', getWuPage);
+
+
 router.get('/', getLoginPage);
 router.post('/index', getIndexPage);
 router.post('/fullThread', getFullThreadPage);
 router.get('/logout', getLogoutPage);
+
+// Wu
+function getWuPage (req, res, next){
+	res.render("wu");
+}
 
 // Login Page
 

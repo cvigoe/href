@@ -467,3 +467,19 @@ h5 {
   cursor:pointer;
   opacity: .8;
 }
+
+#wu {
+  color: white;
+  margin: 130px;
+}
+#wu p{
+  color: aliceblue;
+}
+#waiting{
+    color: white;
+    font-weight: 400;
+    -webkit-text-stroke-width: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Patua One', cursive;
+    font-size: 2.3em;
+}
