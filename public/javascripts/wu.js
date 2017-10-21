@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  var end = new Date('06/27/2017 11:59 PM');
+  var end = new Date('12/20/2017 00:30 AM');
 
   var _second = 1000;
   var _minute = _second * 60;
